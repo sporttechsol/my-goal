@@ -5,19 +5,23 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.template.ui.home.HomeScreen
+import com.example.template.ui.login.LoginScreen
 import com.example.template.ui.second.SecondScreen
 
 @Composable
 fun TemplateNavHost(navController: NavHostController) {
     NavHost(
         navController = navController,
-        startDestination = NavigationRoute.HomeScreen.name
+        startDestination = NavigationRoute.LoginScreen.name
     ) {
         composable(NavigationRoute.HomeScreen.name) {
             HomeScreen()
         }
         composable(NavigationRoute.SecondScreen.name) {
             SecondScreen(navController = navController)
+        }
+        composable(NavigationRoute.LoginScreen.name) {
+            LoginScreen(navController = navController)
         }
 //        val accountsName = Accounts.name
 //        composable(

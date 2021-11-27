@@ -6,8 +6,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.template.navigation.TemplateNavHost
 
 @Composable
 fun HomeScreen(
@@ -31,13 +33,19 @@ fun HomeScreen(
                         selected = currentRoute == item.route.name,
                         onClick = {
                             navController.navigate(item.route.name) {
-                                navController.graph.startDestinationRoute?.let { route ->
-                                    popUpTo(route) {
-                                        saveState = true
-                                    }
+                                popUpTo(navController.graph.findStartDestination().id) {
+                                    saveState = true
                                 }
                                 launchSingleTop = true
                                 restoreState = true
+
+//                                navController.graph.startDestinationRoute?.let { route ->
+//                                    popUpTo(route) {
+//                                        saveState = true
+//                                    }
+//                                }
+//                                launchSingleTop = true
+//                                restoreState = true
                             }
                         },
                         label = { Text(text = stringResource(id = item.title)) },
