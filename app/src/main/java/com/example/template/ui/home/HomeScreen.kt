@@ -3,6 +3,7 @@ package com.example.template.ui.home
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -10,6 +11,7 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.template.navigation.TemplateNavHost
+import com.example.template.ui.theme.TemplateTheme
 
 @Composable
 fun HomeScreen(
@@ -27,10 +29,13 @@ fun HomeScreen(
 
     Scaffold(
         bottomBar = {
-            BottomNavigation {
+            BottomNavigation(
+                backgroundColor = Color.White,
+            ) {
                 items.forEach { item ->
                     BottomNavigationItem(
                         selected = currentRoute == item.route.name,
+                        selectedContentColor = MaterialTheme.colors.primary,
                         onClick = {
                             navController.navigate(item.route.name) {
                                 popUpTo(navController.graph.findStartDestination().id) {
@@ -38,14 +43,6 @@ fun HomeScreen(
                                 }
                                 launchSingleTop = true
                                 restoreState = true
-
-//                                navController.graph.startDestinationRoute?.let { route ->
-//                                    popUpTo(route) {
-//                                        saveState = true
-//                                    }
-//                                }
-//                                launchSingleTop = true
-//                                restoreState = true
                             }
                         },
                         label = { Text(text = stringResource(id = item.title)) },
