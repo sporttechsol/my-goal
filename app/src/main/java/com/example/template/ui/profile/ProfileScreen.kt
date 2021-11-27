@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
@@ -117,9 +118,9 @@ fun ProfileScreen(
                 fontWeight = FontWeight.Bold,
                 fontSize = 24.sp
             )
-            PersonalDetail(title = "Age", value = "12 years")
-            PersonalDetail(title = "City", value = "Minsk")
-            PersonalDetail(title = "Phone", value = "+375 29 568 78 95")
+            PersonalDetail(title = "Age", value = "${state.value.user.age} years")
+            PersonalDetail(title = "City", value = state.value.user.location)
+            PersonalDetail(title = "Email", value = state.value.user.email)
 
             Spacer(modifier = Modifier.height(64.dp))
         }

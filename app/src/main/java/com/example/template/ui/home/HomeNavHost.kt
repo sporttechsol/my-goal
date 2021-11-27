@@ -8,6 +8,7 @@ import com.example.template.ui.profile.ProfileScreen
 import com.example.template.ui.search.SearchScreen
 import com.example.template.ui.skills.SkillsScreen
 import com.example.template.ui.stats.StatsScreen
+import com.example.template.ui.uploadvideo.UploadVideoScreen
 
 @Composable
 fun HomeNavHost(navController: NavHostController) {
@@ -19,13 +20,16 @@ fun HomeNavHost(navController: NavHostController) {
             ProfileScreen()
         }
         composable(HomeNavigationRoute.SkillsScreen.name) {
-            SkillsScreen()
+            SkillsScreen(navController)
         }
         composable(HomeNavigationRoute.SearchScreen.name) {
             SearchScreen()
         }
         composable(HomeNavigationRoute.StatsScreen.name) {
             StatsScreen()
+        }
+        composable(HomeNavigationRoute.UploadVideoScreen.name) {
+            UploadVideoScreen(navController = navController)
         }
     }
 }
