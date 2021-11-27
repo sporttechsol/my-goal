@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Template</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="bottom_navigation_profile_title">Profile</string>
+    <string name="bottom_navigation_skills_title">Skills</string>
+    <string name="bottom_navigation_search_title">Search</string>
+    <string name="bottom_navigation_stats_title">Stats</string>
 </resources>

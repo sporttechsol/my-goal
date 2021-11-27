@@ -1,4 +1,4 @@
-package com.example.template.ui.first
+package com.example.template.ui.home
 
 import androidx.lifecycle.ViewModel
 import com.example.template.core.update
@@ -8,9 +8,9 @@ import kotlinx.coroutines.flow.asStateFlow
 import javax.inject.Inject
 
 @HiltViewModel
-class FirstViewModel @Inject constructor() : ViewModel() {
+class HomeViewModel @Inject constructor() : ViewModel() {
 
-    private val _state = MutableStateFlow(FirstState())
+    private val _state = MutableStateFlow(HomeState())
     val state = _state.asStateFlow()
 
     fun onNameChanged(name: String) {
