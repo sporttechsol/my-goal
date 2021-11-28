@@ -5,4 +5,5 @@
     <string name="bottom_navigation_skills_title">Skills</string>
     <string name="bottom_navigation_search_title">Search</string>
     <string name="bottom_navigation_stats_title">Stats</string>
+    <string name="bottom_navigation_check_title">check</string>
 </resources>

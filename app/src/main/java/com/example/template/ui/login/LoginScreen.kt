@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Button
 import androidx.compose.material.Text
-import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
@@ -32,14 +31,20 @@ fun LoginScreen(
                     modifier = Modifier.align(Alignment.Center),
                     verticalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
-                    TextField(
-                        value = currentState.email,
-                        isError = currentState.emailInvalid,
-                        onValueChange = { viewModel.onEmailChanged(it) },
-                        label = { Text(text = "Email") }
-                    )
-                    Button(onClick = { viewModel.onLoginButtonClick(navController = navController) }) {
-                        Text(text = "Login")
+//                    TextField(
+//                        value = currentState.email,
+//                        isError = currentState.emailInvalid,
+//                        onValueChange = { viewModel.onEmailChanged(it) },
+//                        label = { Text(text = "Email") }
+//                    )
+//                    Button(onClick = { viewModel.onLoginButtonClick(navController = navController) }) {
+//                        Text(text = "Login")
+//                    }
+                    Button(onClick = { viewModel.loginAsPlayer(navController) }) {
+                        Text(text = "Player")
+                    }
+                    Button(onClick = { viewModel.loginAsTrainer(navController = navController) }) {
+                        Text(text = "Trainer")
                     }
                 }
             }

@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.template.ui.check.CheckScreen
 import com.example.template.ui.profile.ProfileScreen
 import com.example.template.ui.search.SearchScreen
 import com.example.template.ui.skills.SkillsScreen
@@ -30,6 +31,9 @@ fun HomeNavHost(navController: NavHostController) {
         }
         composable(HomeNavigationRoute.UploadVideoScreen.name) {
             UploadVideoScreen(navController = navController)
+        }
+        composable(HomeNavigationRoute.CheckScreen.name) {
+            CheckScreen(navController = navController)
         }
     }
 }

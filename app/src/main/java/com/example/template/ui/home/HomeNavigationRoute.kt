@@ -6,4 +6,5 @@ enum class HomeNavigationRoute {
     SearchScreen,
     StatsScreen,
     UploadVideoScreen,
+    CheckScreen,
 }

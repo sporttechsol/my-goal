@@ -23,4 +23,9 @@ sealed class BottomNavigationItem(val route: HomeNavigationRoute, val icon: Int,
         icon = R.drawable.ic_baseline_auto_graph_24,
         title = R.string.bottom_navigation_stats_title
     )
+    object Check : BottomNavigationItem(
+        route = HomeNavigationRoute.CheckScreen,
+        icon = R.drawable.ic_baseline_check_circle_24,
+        title = R.string.bottom_navigation_check_title
+    )
 }
